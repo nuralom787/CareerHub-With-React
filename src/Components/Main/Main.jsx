@@ -5,9 +5,11 @@ import { Outlet } from 'react-router';
 
 const Main = () => {
     return (
-        <div className='max-w-7xl mx-auto px-6'>
+        <div className=''>
             <Header></Header>
-            <Outlet></Outlet>
+            <div className='max-w-6xl mx-auto'>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );
