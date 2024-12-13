@@ -4,7 +4,7 @@ import './Header.css';
 const Header = () => {
     return (
         <div className="bg-gradient-to-r from-[#F9F9FF] to-[#FAF8FF]">
-            <div className="navbar px-0 py-4 max-w-6xl mx-auto">
+            <div className="navbar px-2 xl:px-0 py-4 max-w-6xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +29,7 @@ const Header = () => {
                             <NavLink to="/blogs">About</NavLink>
                         </ul>
                     </div>
-                    <h2 className="font-extrabold text-3xl text-[#1A1919]">CareerHub</h2>
+                    <h2 className="hidden md:block font-extrabold text-3xl text-[#1A1919]">CareerHub</h2>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex justify-center items-center gap-6 ">
@@ -39,7 +39,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/" className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] px-6 py-3 rounded-lg font-extrabold text-xl text-white">Start Applying</Link>
+                    <Link to="/" className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] px-3 md:px-6 py-2 md:py-3 rounded-lg font-extrabold text-xl text-white">Start Applying</Link>
                 </div>
             </div>
         </div>

@@ -4,8 +4,7 @@ import { Link } from "react-router";
 
 
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
-
+    const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
 
 
     return (
@@ -16,8 +15,8 @@ const Job = ({ job }) => {
                 <p className="font-semibold text-xl text-[#757575] mt-2">{company_name}</p>
             </div>
             <div className="mt-6">
-                <span className="text-base font-extrabold text text-[#9873FF] px-5 py-2 rounded-md border border-[#9873FF] mr-6">{remote_or_onsite}</span>
-                <span className="text-base font-extrabold text text-[#9873FF] px-5 py-2 rounded-md border border-[#9873FF] mr-6">{job_type}</span>
+                <span className="text-base font-extrabold text text-[#9873FF] px-5 py-2 rounded border border-[#9873FF] mr-6 cursor-pointer">{remote_or_onsite}</span>
+                <span className="text-base font-extrabold text text-[#9873FF] px-5 py-2 rounded border border-[#9873FF] mr-6 cursor-pointer">{job_type}</span>
             </div>
             <div className="mt-6 mb-8 flex items-center gap-8">
                 <span className="flex items-center gap-2 font-semibold text-xl text-[#757575]">
@@ -29,7 +28,7 @@ const Job = ({ job }) => {
                     <p>Salary: {salary}</p>
                 </span>
             </div>
-            <Link to={`/`} className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] px-4 py-2 rounded-lg font-extrabold text-xl text-white">View Details</Link>
+            <Link to={`/details/${job_title}/${id}`} className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] px-4 py-2 rounded-lg font-extrabold text-xl text-white">View Details</Link>
         </div>
     );
 };
