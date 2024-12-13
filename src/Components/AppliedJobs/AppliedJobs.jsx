@@ -3,9 +3,13 @@ import { LoadJobDataFormLS } from "../Utility/LocalStorage";
 import { Link } from "react-router";
 import { CiLocationOn } from "react-icons/ci";
 import { PiCurrencyCircleDollarLight } from "react-icons/pi";
+import { IoIosArrowDown } from "react-icons/io";
+
 
 const AppliedJobs = () => {
     const [jobs, setJobs] = useState([]);
+    const [filteredJobs, setFilteredJobs] = useState([]);
+
 
     useEffect(() => {
         fetch("../../jobs.json")
@@ -15,14 +19,37 @@ const AppliedJobs = () => {
                 if (data.length) {
                     const appliedJobs = data.filter(job => StoredJobId.includes(job.id));
                     setJobs(appliedJobs);
+                    setFilteredJobs(appliedJobs);
                 }
             })
     }, []);
 
+
+    // Filtered Function.
+    const handleFilter = (data) => {
+        if (data) {
+            const filteredData = jobs.filter(job => job.remote_or_onsite.toLowerCase() === data.toLowerCase());
+            setFilteredJobs(filteredData);
+        } else {
+            setFilteredJobs(jobs);
+        }
+    };
+
+
     return (
         <div className="my-40 max-w-6xl mx-auto space-y-6">
+            <div className="text-end">
+                <details className="dropdown dropdown-end">
+                    <summary className="btn m-1">Filter By <IoIosArrowDown /></summary>
+                    <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <li className="font-bold"><button onClick={() => handleFilter("")}>All</button></li>
+                        <li className="font-bold"><button onClick={() => handleFilter("remote")}>Remote</button></li>
+                        <li className="font-bold"><button onClick={() => handleFilter("onsite")}>On Site</button></li>
+                    </ul>
+                </details>
+            </div>
             {
-                jobs.map(job => <div key={job.id}>
+                filteredJobs.map(job => <div key={job.id}>
                     <div className="border border-[#E8E8E8] flex items-center gap-10 rounded-md p-6">
                         <div className="bg-[#F4F4F4] px-10 py-20 rounded-lg">
                             <img className="bg-[#F4F4F4] w-full lg:w-40" src={job.logo} alt="" />
