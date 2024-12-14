@@ -4,7 +4,7 @@ import banner from "../../assets/images/user.png";
 
 const Banner = () => {
     return (
-        <div className="rounded-md lg:rounded-none bg-gradient-to-r from-[#F9F9FF] to-[#FAF8FF] pt-10 mb-10">
+        <div className="rounded-md lg:rounded-none bg-gradient-to-r from-[#F9F9FF] to-[#FAF8FF] pt-10 pb-2 lg:pb-0 mb-10">
             <div className="max-w-6xl mx-auto lg:flex justify-between items-center lg:gap-16 px-2 md:px-0">
                 <div className="text-center lg:text-start">
                     <div className="space-y-2">

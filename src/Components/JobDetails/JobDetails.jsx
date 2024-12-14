@@ -29,8 +29,8 @@ const JobDetails = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-6 my-20">
-            <div className="col-span-3 space-y-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 my-20 px-6 xl:px-0">
+            <div className="col-span-1 md:col-span-3 space-y-8">
                 <p className="font-medium text-base text-[#757575]"><span className="font-extrabold text-base text-[#1A1919]">Job Description: </span>{job_description}</p>
                 <p className="font-medium text-base text-[#757575]"><span className="font-extrabold text-base text-[#1A1919]">Responsibility: </span>{job_responsibility}</p>
                 <p className="font-extrabold text-base text-[#1A1919]">Educational Requirement: </p>
@@ -38,7 +38,7 @@ const JobDetails = () => {
                 <p className="font-extrabold text-base text-[#1A1919]">Experiences: </p>
                 <p className="font-medium text-base text-[#757575]">{experiences}</p>
             </div>
-            <div className="col-span-2">
+            <div className="col-span-1 md:col-span-2">
                 <div className="bg-gradient-to-r from-[#F9F9FF] to-[#FAF8FF] p-8 rounded-lg space-y-7 mb-5">
                     <div>
                         <h1 className="font-extrabold text-xl text-[#1A1919] pb-3 border-b border-[#FAF8] mb-4">Job Details</h1>

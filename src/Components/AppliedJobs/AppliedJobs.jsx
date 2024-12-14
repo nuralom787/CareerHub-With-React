@@ -37,7 +37,7 @@ const AppliedJobs = () => {
 
 
     return (
-        <div className="my-40 max-w-6xl mx-auto space-y-6">
+        <div className="my-40 max-w-6xl mx-auto px-4 xl:px-0 space-y-6">
             <div className="text-end">
                 <details className="dropdown dropdown-end">
                     <summary className="btn m-1">Filter By <IoIosArrowDown /></summary>
@@ -50,16 +50,16 @@ const AppliedJobs = () => {
             </div>
             {
                 filteredJobs.map(job => <div key={job.id}>
-                    <div className="border border-[#E8E8E8] flex items-center gap-10 rounded-md p-6">
-                        <div className="bg-[#F4F4F4] px-10 py-20 rounded-lg">
-                            <img className="bg-[#F4F4F4] w-full lg:w-40" src={job.logo} alt="" />
+                    <div className="border border-[#E8E8E8] flex flex-col md:flex-row items-center gap-6 lg:gap-10 rounded-md p-6">
+                        <div className="bg-[#F4F4F4] px-6 lg:px-10 py-12 lg:py-20 rounded">
+                            <img className="bg-[#F4F4F4] w-full md:w-24 lg:w-40" src={job.logo} alt="" />
                         </div>
-                        <div className="grow space-y-4">
+                        <div className="grow space-y-4 text-center md:text-start">
                             <h2 className="font-extrabold text-2xl text-[#474747] mt-6">{job.job_title}</h2>
                             <p className="font-semibold text-xl text-[#757575] mt-2">{job.company_name}</p>
                             <button className="text-base font-extrabold text text-[#9873FF] px-5 py-2 rounded border border-[#9873FF] mr-6 cursor-pointer">{job.remote_or_onsite}</button>
                             <button className="text-base font-extrabold text text-[#9873FF] px-5 py-2 rounded border border-[#9873FF] mr-6 cursor-pointer">{job.job_type}</button>
-                            <div className="flex items-center gap-6">
+                            <div className="flex flex-col lg:flex-row items-center md:items-start gap-4 lg:gap-6">
                                 <span className="flex items-center gap-2 font-semibold text-xl text-[#757575]">
                                     <CiLocationOn></CiLocationOn>
                                     <p>{job.location}</p>
